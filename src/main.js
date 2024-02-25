@@ -1,123 +1,212 @@
-const refs = {
-    slistGalleryEl: document.querySelector('.slist-card-section'),
+// const refs = {
+//     slistGalleryEl: document.querySelector('.slist-card-section'),
+    
+// };
 
-};
+// import {STORAGE_KEY} from './public/addls';
 
-// function createStorageKey() {
-
-// } 
-const STORAGE_KEY = 'added-book';
-
-const addedBook1 = {
-    book_image: "https://storage.googleapis.com/du-prd/books/images/9781538748367.jpg",
-    author: "Harlan Coben",
-    list_name: "Audio Fiction",
-    description: "A man imprisoned for murdering his 3-year-old son becomes convinced his son is still alive and plans an escape. Read by Steven Weber. 10 hours, 16 minutes unabridged.",
-    title: "I WILL FIND YOU",
-    amazonURL: "https://www.amazon.com/dp/1538748363?tag=NYTBSREV-20",
-    appleURL: "https://goto.applebooks.apple/9781543661385?at=10lIEQ",
-};
- const addedBook2 = {
-    book_image: "https://storage.googleapis.com/du-prd/books/images/9781982185824.jpg",
-    author: "Harlan Coben",
-    list_name: "Audio Fiction",
-    description: "",
-    title: "I WILL FIND YOU",
-    amazonURL: "https://www.amazon.com/dp/1538748363?tag=NYTBSREV-20",
-    appleURL: "https://goto.applebooks.apple/9781543661385?at=10lIEQ",
-}
+// let key = 0;
 
 
-function saveToLS(STORAGE_KEY, value) {
-  const jsonData = JSON.stringify(value);
-  localStorage.setItem(STORAGE_KEY, jsonData);
-};
 
-saveToLS(STORAGE_KEY, addedBook2);
+// function loadFromLS(key) {
+//   try {
+//     for (let i = 0; i < localStorage.length; i++) {
+//   let key = localStorage.key(i);
+//   console.log(`${key}`);
+//   const data = localStorage.getItem(key); 
+
+//     const result = JSON.parse(data);
+//     console.log(result);
+//       renderImages(result);
+//     };
+
+//   } catch {
+//     return console.log("something goes wrong...(((" );;
+//   }
+
+  
+// };
+
+// loadFromLS();
 
 
 
 
- function loadFromLS(key) {
-  const data = localStorage.getItem(key); 
+// function imageTemplate(result) {
+//   return `<ul class="slist-card-list">
+//           <button type="button" class="slist-del-btn js-slist-del-btn">
+//             del
+//           </button>
+//           <li class="slist-card-item">
+//             <div class="slist-card-picture">
+//               <img src="${result.book_image}" alt="books" />
+//             </div>
+//             <div class="slist-info-container">
+//               <h3 class="slist-book-header">${result.title}</h3>
+//               <div class="slist-book-category">${result.list_name}</div>
+//               <p class="slist-book-description">${result.description}</p>
+//               <div class="slist-book-autor">${result.author} Autor</div>
 
-  try {
-    const result = JSON.parse(data);
-    return result;
-  } catch {
-    return console.log("something goes wrong...(((" );;
-  }
-};
+//               <nav class="slist-nav">
+//                 <ul class="slist-nav-list">
+//                   <li class="slist-nav-item">
+//                     <button type="button" class="slist-nav-link">
+//                       amazone
+//                       <a href= ${result.amazonURL} class="slist-nav-link"></a>
+//                     </button>
+//                   </li>
 
-const sbook = loadFromLS(STORAGE_KEY);
-console.log(sbook);
-
-
-
-
-function imageTemplate(result) {
-  return `<ul class="slist-card-list">
-          <button type="button" class="slist-del-btn js-slist-del-btn">
-            del
-          </button>
-          <li class="slist-card-item">
-            <div class="slist-card-picture">
-              <img src="${result.book_image}" alt="books" />
-            </div>
-            <div class="slist-info-container">
-              <h3 class="slist-book-header">${result.title}</h3>
-              <div class="slist-book-category">${result.list_name}</div>
-              <p class="slist-book-description">${result.description}</p>
-              <div class="slist-book-autor">${result.author} Autor</div>
-
-              <nav class="slist-nav">
-                <ul class="slist-nav-list">
-                  <li class="slist-nav-item">
-                    <button type="button" class="slist-nav-link">
-                      amazone
-                      <a href= ${result.amazonURL} class="slist-nav-link"></a>
-                    </button>
-                  </li>
-
-                  <li class="slist-nav-item">
-                    <button type="button" class="slist-nav-link">
-                      app
-                      <a href=${result.appleURL} class="slist-nav-link"></a>
-                    </button>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          </li>
-        </ul>`
+//                   <li class="slist-nav-item">
+//                     <button type="button" class="slist-nav-link">
+//                       app
+//                       <a href=${result.appleURL} class="slist-nav-link"></a>
+//                     </button>
+//                   </li>
+//                 </ul>
+//               </nav>
+//             </div>
+//           </li>
+//         </ul>`
        
-}
-
-// function imagesTemplate(array) {
-//     return array.map(imageTemplate).join('');
-      
 // }
 
-function renderImages(result) {
-    const markup = imageTemplate(result);
-    refs.slistGalleryEl.insertAdjacentHTML('beforeend', markup);
+
+
+// function renderImages(result) {
+//     const markup = imageTemplate(result);
+//   refs.slistGalleryEl.insertAdjacentHTML('beforeend', markup);
+  
+
+//    refs.slistGalleryEl.addEventListener('click', onBtnClick); 
+// };
+
+ 
+
+// function onBtnClick(e) {
+//   console.log(e.target.nodeName);
+  
+//    if (e.target.nodeName === 'BUTTON') {
+//      console.log('i am your btn');
+//      localStorage.removeItem(key);
+//   }
     
+   
+    
+
+// }
+
+
+
+
+
+
+
+
+
+//  ЧЕРЕЗ МАСИВ
+
+
+const slistGalleryEl = document.querySelector('.slist-card-section');
+    
+
+
+
+
+let key;                  //ключ
+let arrOfBooks = [];       // збираємо данні localStorage в масив  
+
+
+//завантажуємо з ЛС по данним ключа і збираємо в масив обєктів
+function loadFromLS(key) {
+  try {
+    for (let i = 0; i < localStorage.length; i++) {
+      let key = localStorage.key(i);
+      const data = localStorage.getItem(key);
+      const result = JSON.parse(data);
+      arrOfBooks.push(result);
+ 
+    };
+  } catch {console.log(error);}
+         
+};
+      
+  loadFromLS();
+  
+
+
+renderImages(arrOfBooks);     //рендеримо розмітку
+
+  
+
+
+function imageTemplate({ id, book_image,title,list_name,description,author,amazonURL,appleURL}) {
+  return `<ul class="slist-card-list">
+           <button type="button" data-id=${id} class="slist-del-btn js-slist-del-btn">
+             del
+         </button>
+          <li class="slist-card-item">
+           <div class="slist-card-picture">
+             <img src="${book_image}" alt="books" />
+             </div>
+             <div class="slist-info-container">
+               <h3 class="slist-book-header">${title}</h3>
+               <div class="slist-book-category">${list_name}</div>
+               <p class="slist-book-description">${description}</p>
+               <div class="slist-book-autor">${author} Autor</div>
+
+               <nav class="slist-nav">
+                 <ul class="slist-nav-list">
+                   <li class="slist-nav-item">
+                     <button type="button" class="slist-nav-link">
+                       amazone
+                       <a href= ${amazonURL} class="slist-nav-link"></a>
+                     </button>
+                   </li>
+
+                   <li class="slist-nav-item">
+                     <button type="button" class="slist-nav-link">
+                       app
+                       <a href=${appleURL} class="slist-nav-link"></a>
+                     </button>
+                   </li>
+                 </ul>
+               </nav>
+             </div>
+           </li>
+         </ul>`};
+
+function imagesTemplate(array) {
+    return array.map(imageTemplate).join('');
+      
 };
 
-renderImages(sbook);
+function renderImages(array) {
+    const markup = imagesTemplate(array);
+  slistGalleryEl.innerHTML = markup;
+ 
+  
+   slistGalleryEl.addEventListener('click', onBtnClick); // ставимо слухача на форму 
+};
+
+  function onBtnClick(e) {
+ 
+
+  if (e.target.nodeName === 'BUTTON') {
+    console.log(e.target.dataset.id);
+    let bookId = (e.target.dataset.id);//знаходимо по ід на кнопку повішену
+    localStorage.removeItem(e.target.dataset.id);
+    // console.log(arrOfBooks);
+   const newarr = arrOfBooks.filter(item => (item.id === bookId));
+    arrOfBooks.splice(
+      arrOfBooks.findIndex(item => item.id === bookId),
+      1
+    );
+    console.log(arrOfBooks);
+        
+    renderImages(arrOfBooks);
+    
+  };
 
 
-// console.log(imageTemplate(sbook));
-
-const slistDelBtn = document.querySelector('.js-slist-del-btn');
-
-slistDelBtn.addEventListener('click', onBtnClick);
-
-function onBtnClick(e) {
-    console.log(e.target);
-    console.log('i am your btn');
-    refs.slistGalleryEl.innerHTML = '';
-    localStorage.removeItem(STORAGE_KEY);
-
-}
-
+};
